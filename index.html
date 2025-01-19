@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Drone Control System</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>NEXUS-X DRONE CONTROL</h1>
+        <div class="status-bar">
+          <div class="status-item">
+            <span class="label">STATUS</span>
+            <span class="value" id="droneStatus">STANDBY</span>
+          </div>
+          <div class="status-item">
+            <span class="label">BATTERY</span>
+            <span class="value" id="batteryLevel">100%</span>
+          </div>
+          <div class="status-item">
+            <span class="label">ALTITUDE</span>
+            <span class="value" id="altitude">0 M</span>
+          </div>
+          <div class="status-item">
+            <span class="label">SPEED</span>
+            <span class="value" id="speed">0 KM/H</span>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="drone-view">
+          <div class="radar-container">
+            <div class="radar-screen">
+              <div class="radar-sweep"></div>
+              <div class="radar-target"></div>
+            </div>
+          </div>
+          <div class="camera-feed">
+            <div class="crosshair">
+              <div class="ch-line horizontal"></div>
+              <div class="ch-line vertical"></div>
+            </div>
+            <div class="camera-overlay"></div>
+          </div>
+          <div class="weapons-panel">
+            <h3>WEAPONS SYSTEMS</h3>
+            <div class="weapons-grid">
+              <div class="weapon-item">
+                <span class="weapon-name">AGM-114 Hellfire</span>
+                <span class="weapon-count">x4</span>
+                <span class="weapon-status">ARMED</span>
+              </div>
+              <div class="weapon-item">
+                <span class="weapon-name">GBU-12 Paveway</span>
+                <span class="weapon-count">x2</span>
+                <span class="weapon-status">ARMED</span>
+              </div>
+              <div class="weapon-item">
+                <span class="weapon-name">70mm Hydra</span>
+                <span class="weapon-count">x12</span>
+                <span class="weapon-status">ARMED</span>
+              </div>
+            </div>
+            <button id="fireBtn" class="control-btn weapon-btn" disabled>FIRE WEAPON</button>
+          </div>
+        </div>
+
+        <div class="control-panel">
+          <div class="control-group">
+            <button id="startBtn" class="control-btn">INITIALIZE SYSTEM</button>
+            <button id="takeoffBtn" class="control-btn" disabled>TAKEOFF</button>
+            <button id="landBtn" class="control-btn" disabled>LAND</button>
+            <button id="emergencyBtn" class="control-btn emergency">EMERGENCY STOP</button>
+          </div>
+
+          <div class="telemetry">
+            <div class="gauge" id="throttleGauge">
+              <label>THROTTLE</label>
+              <div class="gauge-bar">
+                <div class="gauge-fill"></div>
+              </div>
+            </div>
+            <div class="gauge" id="yawGauge">
+              <label>YAW</label>
+              <div class="gauge-bar">
+                <div class="gauge-fill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="coordinates">
+          <span>LAT: <span id="lat">00°00'00"N</span></span>
+          <span>LONG: <span id="long">000°00'00"E</span></span>
+        </div>
+        <div class="system-status">SYSTEM READY</div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+
+</html>
